@@ -44,7 +44,8 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 set shell=/bin/bash
-
+"allow backspace to delete character
+set backspace=2
 
 " size of a hard tabstop
 set tabstop=2
@@ -54,6 +55,10 @@ set expandtab
 "
 " " size of an "indent"
 set shiftwidth=2
+"Edit displayed when the cursor state
+set ruler
+"insert when paste
+set paste
 let g:clang_use_library = 1
 let g:clang_library_path = '/usr/lib/llvm-3.8/lib/'
 let g:ycm_global_ycm_extra_conf='~/.ycm_extra_conf.py'
@@ -67,6 +72,9 @@ inoremap " ""<ESC>i
 
 "highlight
 autocmd InsertEnter * se cul
+if has("syntax")
+  syntax on
+endif
 "go to definitions
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 inoremap <expr> <CR>       pumvisible() ? "\<C-y>" : "\<CR>"
@@ -75,3 +83,28 @@ let g:ycm_key_list_stop_completion = ['<CR>']
 "Search by character is highlighted
 set hlsearch
 set incsearch
+"open ctags
+map <F4> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR>
+set tags=/home/wangshiwei/ars/code_ars/fork_ars/ServerSDK-Video/tags;
+set autochdir
+"""""""""""""""""""""""cscope setting"""""""""""""""""" 
+set cscopequickfix=s-,c-,d-,i-,t-,e-
+if has("cscope")
+set csprg=/usr/bin/cscope
+set csto=1
+set cst
+set nocsverb
+" add any database in current directory
+if filereadable("cscope.out")
+cs add cscope.out
+endif
+set csverb
+endif
+nmap <C-@>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+nmap <C-@>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+nmap <C-@>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+nmap <C-@>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+nmap <C-@>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+nmap <C-@>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+nmap <C-@>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+nmap <C-@>d :cs find d <C-R>=expand("<cword>")<CR><CR>
