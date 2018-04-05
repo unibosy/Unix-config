@@ -16,6 +16,7 @@ ZSH_THEME="jnrowe"
 ZSH_THEME="kafeitu"
 ZSH_THEME="muse"
 ZSH_THEME="ys"
+ZSH_THEME="strug"
 
 
 # Set list of themes to load
