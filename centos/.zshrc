@@ -13,6 +13,7 @@ ZSH_THEME="essembeh"
 ZSH_THEME="crcandy"
 ZSH_THEME="gianu"
 ZSH_THEME="jnrowe"
+ZSH_THEME="kafeitu"
 
 
 # Set list of themes to load
