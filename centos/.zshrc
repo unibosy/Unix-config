@@ -12,6 +12,7 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="essembeh"
 ZSH_THEME="crcandy"
 ZSH_THEME="gianu"
+ZSH_THEME="jnrowe"
 
 
 # Set list of themes to load
