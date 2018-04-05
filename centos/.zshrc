@@ -8,15 +8,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-#ZSH_THEME="agnoster"
-ZSH_THEME="essembeh"
-ZSH_THEME="crcandy"
-ZSH_THEME="gianu"
-ZSH_THEME="jnrowe"
-ZSH_THEME="kafeitu"
-ZSH_THEME="muse"
-ZSH_THEME="ys"
-ZSH_THEME="strug"
+ZSH_THEME="random"
 
 
 # Set list of themes to load
@@ -24,7 +16,8 @@ ZSH_THEME="strug"
 # cause zsh load theme from this variable instead of
 # looking in ~/.oh-my-zsh/themes/
 # An empty array have no effect
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+ZSH_THEME_RANDOM_CANDIDATES=("essembeh" "crcandy" "gianu" "jnrowe" "kafeitu" "muse" "ys" "strug" "tjkirch_mod" "macovsky-ruby" "dpoggi"
+ )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -96,8 +89,8 @@ export ZSH_THEME="afowler"
 # ssh
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+## Set personal aliases, overriding those provided by oh-my-zsh libs,
+## plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
@@ -214,7 +207,7 @@ alias runl='./java_run_server.sh myrobot live old'
 alias cppc='./run_recorder.sh myrobot com old'
 alias cppl='./run_recorder.sh myrobot live old'
 alias cddemo='cd Agora_Recording_SDK_for_Linux_FULL/samples'
-alias gome='cd /home/unibosy/ws/myGit'
+alias gomygit='cd /home/unibosy/ws/myGit'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
