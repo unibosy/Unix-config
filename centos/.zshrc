@@ -14,6 +14,8 @@ ZSH_THEME="crcandy"
 ZSH_THEME="gianu"
 ZSH_THEME="jnrowe"
 ZSH_THEME="kafeitu"
+ZSH_THEME="muse"
+ZSH_THEME="ys"
 
 
 # Set list of themes to load
