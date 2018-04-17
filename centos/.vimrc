@@ -39,7 +39,7 @@ let g:SuperTabDefaultCompletionType="<C-X><C-O>"
 noremap <C-S> :update<CR>
 vnoremap <C-S> <C-C>:update<CR>
 inoremap <C-S> <C-O>:update<CR>
-"nmap <C-s> :w <CR>
+nmap <C-s> :w <CR>
 "nmap <C-s>a :wall <CR>
 "if has("cscope")
 "    if filereadable("cscope.out")
