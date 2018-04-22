@@ -1,6 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+sdo() sudo zsh -c "$functions[$1]" "$@"
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 #show or hide user
@@ -66,6 +68,7 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
+cd /home/unibosy/ws
 
 # User configuration
 
@@ -97,6 +100,61 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 # Example aliases
 alias zshconfig="mate ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
+alias -s py=vim
+alias -s html=vim
+alias -s tgz='tar zxvf'
+alias -s .gz='tar -xf'
+alias rrrr='. ~/.zshrc'
+alias rrr='. ~/.zshrc'
+alias rrrrr='. ~/.zshrc'
+alias rrrrrr='. ~/.zshrc'
+alias rrrrrrr='. ~/.zshrc'
+alias rrrrrrrr='. ~/.zshrc'
+alias rrrrrrrrr='. ~/.zshrc'
+alias rrrrrrrrrr='. ~/.zshrc'
+alias rrrrrrrrrrr='. ~/.zshrc'
+alias mmm='cd /home/unibosy/ws/myGit'
+alias mm='cd /home/unibosy/ws/myGit'
+alias mmmm='cd /home/unibosy/ws/myGit'
+alias mmmmm='cd /home/unibosy/ws/myGit'
+alias mmmmmm='cd /home/unibosy/ws/myGit'
+alias mmmmmmm='cd /home/unibosy/ws/myGit'
+alias mmmmmmmm='cd /home/unibosy/ws/myGit'
+alias mmmmmmmmm='cd /home/unibosy/ws/myGit'
+
+
+################################################  tmux begin  ###############################################
+#session
+alias tls='tmux ls'
+alias tat='tmux a -t'
+alias tst='tmux switch -t'
+alias tks='tmux kill-session -t'
+alias tkillall='tmux kill-server'
+alias tns='tmux new -s'
+alias td='tmux detach'
+#window
+alias tnw='tmux new-window'
+alias tlsw='tmux list-windows'
+alias tsw='tmux select-window -t :'
+#sessions should be nested with care
+#unset TMUX
+#alias killalltmux = 'tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length($1)-1)}' | xargs kill'
+#tmux_init()
+#{
+#    echo "asssssssssssssssssssssssssssss"
+#    tmux 
+#    #sessions should be nested with care
+#    unset TMUX
+#    tmux new-session -s "unibo" -d -n "local"
+#    tmux new-window -n "other" 
+#}
+
+#if which tmux 2>&1 >/dev/null; then
+#    test -z "$TMUX" && (tmux attach || tmux_init)
+#fi
+
+################################################  tmux end  ###############################################
+
 
 
 
@@ -200,14 +258,16 @@ alias gol='cd /ws/dallas_roku-7.0.8817_11162015/sigma-sx/release/DispMips'
 alias cdr='cd Agora_Recording_SDK_for_Linux_FULL/samples/cpp/'
 alias cdrs='cd Agora_Recording_SDK_for_Linux_FULL.sym/samples/cpp/'
 alias vi='vim'
+export EDITOR=/usr/local/bin/vim
 alias branch='git branch'
-alias javas='source build.sh pre_set /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.151-1.b12.el6_9.x86_64/include/'
+alias javas='source build.sh pre_set /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.161-3.b14.el6_9.x86_64/include/'
 alias runc='./java_run_server.sh myrobot com old'
 alias runl='./java_run_server.sh myrobot live old'
 alias cppc='./run_recorder.sh myrobot com old'
 alias cppl='./run_recorder.sh myrobot live old'
 alias cddemo='cd Agora_Recording_SDK_for_Linux_FULL/samples'
 alias gomygit='cd /home/unibosy/ws/myGit'
+alias gow='cd /home/unibosy/ws'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -227,7 +287,7 @@ fi
 #    . /etc/bash_completion
 #fi
 
-export PATH=$PATH:/usr/local/curl/bin:/opt/codesourcery/arm/bin:/opt/mipssde/bin:
+export PATH=$PATH:/usr/local/curl/bin:/opt/codesourcery/arm/bin:/opt/mipssde/bin:/usr/local/git/bin:/usr/bin/cscope:/bin:/usr/bin:/usr/local/bin:/home/unibosy/:
 export CC=/opt/rh/devtoolset-2/root/usr/bin/gcc                                                                                                                      
 export CXX=/opt/rh/devtoolset-2/root/usr/bin/g++
 export LINK=/opt/rh/devtoolset-2/root/usr/bin/g++
