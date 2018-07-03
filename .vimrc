@@ -209,8 +209,9 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
 Plugin 'tenfyzhong/CompleteParameter.vim'
-Plugin 'Yggdroot/LeaderF'
 Plugin 'kien/ctrlp.vim'
+Plugin 'tacahiroy/ctrlp-funky'
+Plugin 'vim-scripts/taglist.vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -278,3 +279,15 @@ let g:SuperTabDefaultCompletionType='<c-x><c-u><c-p>'
 let g:ctrlp_map = '<c-p>'     "hotkey Ctrl+p open ctrlp plugin
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = '0'       "disable work path mode
+
+"ctrlp-funky
+map <F6> :CtrlPFunky<cr>
+let g:ctrlp_extensions = ['funky']
+let g:ctrlp_funky_syntax_highlight = 1 
+
+"taglst
+map <F5> :Tlist<cr>
+let Tlist_Show_One_File = 1
+let Tlist_Exit_OnlyWindow = 1 
+let Tlist_Use_Right_Window = 1
+let Tlist_GainFocus_On_ToggleOpen = 1
