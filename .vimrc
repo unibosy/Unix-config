@@ -316,3 +316,5 @@ let Tlist_GainFocus_On_ToggleOpen = 1
 "step 2:ctags -R --c++-kinds=+l+x+p --fields=+iaSl --extra=+q --language-force=c++ -f stdcpp.tags
 let OmniCpp_DefaultNamespaces = ["_GLIBCXX_STD"]
 set tags+=/usr/include/c++/4.8/stdcpp.tags
+"system api
+set tags+=/usr/include/sys.tags
