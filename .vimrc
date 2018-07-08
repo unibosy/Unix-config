@@ -7,7 +7,6 @@ set autoindent shiftwidth=4
 set smartindent
 set comments=://
 set comments=s1:/*,mb:*,ex0:/
-set tags=./tags,./../tags,./**/tags
 set fileformats=unix,dos
 set cmdheight=1
 set ruler
@@ -35,11 +34,10 @@ let g:winManagerWindowLayout="FileExplorer|TagList"
 nmap wm :WMToggle<cr> 
 nmap cw :cw <cr>
 filetype plugin indent on
+autocmd BufWritePost $MYVIMRC source $MYVIMRC
 
 set nocp
 filetype plugin on
-set tags+=/home/unibosy/ws/recording/code/ServerSDK-Video "set tags+=D:/ctags/tags/hge 
-set tags+=/home/unibosy/.vim " OmniCppComplete 
 let OmniCpp_NamespaceSearch = 1
 let OmniCpp_GlobalScopeSearch = 1
 let OmniCpp_ShowAccess = 1 
@@ -65,6 +63,14 @@ nmap <C-s>a :wall <CR>
 "        cscope add cscope.out
 "    endif
 "endif
+set autochdir 
+set tags=tags;
+
+if has("tags")
+    echo "has tags"
+    set autochdir 
+    set tags=tags;
+endif
 
 if has("cscope")
     set cscopetag
@@ -107,6 +113,16 @@ if has("cscope")
     nmap <C-@><C-@>f :vert scs find f <C-R>=expand("<cfile>")<CR><CR>   
     nmap <C-@><C-@>i :vert scs find i ^<C-R>=expand("<cfile>")<CR>$<CR> 
     nmap <C-@><C-@>d :vert scs find d <C-R>=expand("<cword>")<CR><CR>
+
+    
+    nnoremap <buffer> <leader>cs :cscope find s  <c-r>=expand('<cword>')<cr><cr>
+    nnoremap <buffer> <leader>cg :cscope find g  <c-r>=expand('<cword>')<cr><cr>
+    nnoremap <buffer> <leader>cc :cscope find c  <c-r>=expand('<cword>')<cr><cr>
+    noremap <buffer> <leader>ct :cscope find t  <c-r>=expand('<cword>')<cr><cr>
+    nnoremap <buffer> <leader>ce :cscope find e  <c-r>=expand('<cword>')<cr><cr>
+    nnoremap <buffer> <leader>cf :cscope find f  <c-r>=expand('<cfile>')<cr><cr>
+    nnoremap <buffer> <leader>ci :cscope find i ^<c-r>=expand('<cfile>')<cr>$<cr>
+    nnoremap <buffer> <leader>cd :cscope find d  <c-r>=expand('<cword>')<cr><cr>
 endif
 "autocmd BufEnter * lcd %:p:h
 nmap <F5> :ls<CR>
@@ -212,6 +228,7 @@ Plugin 'tenfyzhong/CompleteParameter.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'vim-scripts/taglist.vim'
+Bundle 'vim-scripts/OmniCppComplete'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -226,10 +243,11 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-
+set tags+=$HOME/ws/recording/ServerSDK-Video
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf=0
 let g:ycm_show_diagnostics_ui = 1
+nnoremap &lt;leader&gt;jd :YcmCompleter GoToDefinitionElseDeclaration&lt;CR&gt;
 
 "press enter to select  
 "inoremap <expr> <CR> pumvisible() ?  "\<C-Y>" : "\<CR>" 
@@ -242,9 +260,10 @@ let g:ycm_show_diagnostics_ui = 1
 set completeopt=longest,menu
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif 
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
-nnoremap <F6> :YcmForceCompileAndDiagnostics<CR>	"force recomile with syntastic
-" nnoremap <leader>lo :lopen<CR>	"open locationlist
-" nnoremap <leader>lc :lclose<CR>	"close locationlist
+map gd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <F6> :YcmForceCompileAndDiagnostics<CR>    "force recomile with syntastic
+" nnoremap <leader>lo :lopen<CR>    "open locationlist
+" nnoremap <leader>lc :lclose<CR>   "close locationlist
 inoremap <leader><leader> <C-x><C-o>
 let g:ycm_min_num_of_chars_for_completion=2
 let g:ycm_seed_identifiers_with_syntax = 1
@@ -281,13 +300,17 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = '0'       "disable work path mode
 
 "ctrlp-funky
-map <F6> :CtrlPFunky<cr>
+map <C-m> :CtrlPFunky<cr>
 let g:ctrlp_extensions = ['funky']
 let g:ctrlp_funky_syntax_highlight = 1 
 
 "taglst
-map <F5> :Tlist<cr>
+map <C-n> :Tlist<cr>
 let Tlist_Show_One_File = 1
 let Tlist_Exit_OnlyWindow = 1 
 let Tlist_Use_Right_Window = 1
 let Tlist_GainFocus_On_ToggleOpen = 1
+
+
+let OmniCpp_DefaultNamespaces = ["_GLIBCXX_STD"]
+set tags+=/usr/include/c++/4.8/stdcpp.tags
