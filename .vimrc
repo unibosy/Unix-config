@@ -311,6 +311,8 @@ let Tlist_Exit_OnlyWindow = 1
 let Tlist_Use_Right_Window = 1
 let Tlist_GainFocus_On_ToggleOpen = 1
 
-
+"install omnicpp plugin, 
+"step 1:cd /usr/include/c++/4.8
+"step 2:ctags -R --c++-kinds=+l+x+p --fields=+iaSl --extra=+q --language-force=c++ -f stdcpp.tags
 let OmniCpp_DefaultNamespaces = ["_GLIBCXX_STD"]
 set tags+=/usr/include/c++/4.8/stdcpp.tags
